@@ -18,7 +18,6 @@
 	<script>
 	   $.get('comments.csv', function(data) {
 	      comments = toHTML(data)
-	      console.log(comments);
 	      $(comments).appendTo("#comments"); } );
 	</script>
 	<hr>
