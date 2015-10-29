@@ -10,14 +10,14 @@
 	<h1><a href="index.html"><<</a>Guest Book</h1>
 	<form>
 	  Name: <input type="text" name="name"><br>
-	  Comment: <input type="text" name="comment"><br>
-	  <input id="button" type="submit" value="Submit" method="post">
+	  Comment: <textarea type="text" name="comment" rows="7" cols="20"></textarea><br>
+	  <input id="button" type="submit" value="Submit">
 	</form>
 	<hr>
 	<div id="comments"></div>
 	<script>
 	   $.get('comments.csv', function(data) {
-	      comments = toHTML(data)
+	     var comments = toHTML(data)
 	      $(comments).appendTo("#comments"); } );
 	</script>
 	<hr>
