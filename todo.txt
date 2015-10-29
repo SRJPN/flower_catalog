@@ -1,0 +1,38 @@
+Flower_catalog
+===================================================================================================================
+steps
+	
+	analyse the requirement
+	contents to be added
+		images
+			img src
+		links to other pages
+			href
+		animation
+
+		download link to download the page as pdf
+			http://www.htm2pdf.co.uk/save-as-pdf/
+				<a href="http://www.htm2pdf.co.uk/display">Save this page as PDF</a>
+			jsPDF
+
+	HTML layout
+		index
+			images
+			links to other pages
+			watering jar with animation
+
+		Abeliophyllum
+			image
+			text content
+			link back to index
+			download link to download the page as pdf
+
+		Ageratum
+			image
+			text content
+			link back to index
+			download link to download the page as pdf
+
+		Guest_Book
+			Name and comment boxes
+			list of previous comments with date and time
