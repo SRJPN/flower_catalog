@@ -1,0 +1,64 @@
+body{
+}
+
+h1 {
+	text-align: center;
+	color: orange;	
+}
+
+/*.header {
+	text-align: center;
+	background-image: "./resources/images/bokeh-banner.jpg";
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 75px;
+	margin: 0;
+}*/
+
+#freshorigin {
+	width: 100%;
+}
+
+.text {
+	width: 50%;
+	float: right;
+	font-size: 24px;
+	line-height: 1.5;
+}
+
+.menu_list {
+	vertical-align: middle; 
+	float: right;
+	width: 50%;
+	font-family: times;
+}
+
+.cover_image {
+	margin-left: 20px;
+	width:48%;
+	float: left;
+}
+
+.footer {
+	font-size: 24px;
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	font-size: 24px;
+}
+
+form {
+	font-size: 24px;
+}
+
+#button {
+	font-size: 24px;
+}
+
+tr {
+	text-align: center;
+}
