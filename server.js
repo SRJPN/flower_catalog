@@ -3,10 +3,11 @@ var fs = require('fs');
 var queryString = require('querystring');
 
 var addComment = function(name,comment){
+	console.log(name,comment)
 	var now = new Date();
 	var time = now.toLocaleTimeString();
 	var date = now.toLocaleDateString();
-	return "\n"+[time,date,name,comment].join();
+	return "\n"+[name,time,date,comment].join();
 };
 
 var doComment = function(guestComment){
