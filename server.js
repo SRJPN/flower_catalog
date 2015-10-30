@@ -1,26 +1,39 @@
 var http = require('http');
 var fs = require('fs');
+var queryString = require('querystring');
 
 var addComment = function(name,comment){
-	var date = new Date();
-	return "\n"+[date,name,comment].join();
+	var now = new Date();
+	var time = now.toLocaleTimeString();
+	var date = now.toLocaleDateString();
+	return "\n"+[time,date,name,comment].join();
+};
+
+var doComment = function(guestComment){
+	var guestComment = queryString.parse(guestComment);
+	var data = addComment(guestComment.name,guestComment.comment)
+	fs.appendFile("comments.csv",data);
 };
 
 var listenerResponse =  function(req,res){
 	console.log(req.url)
 	if(req.url.match(/\/guest_book.html\?/)){
-		var x = req.url.match(/\/guest_book.html\?name=(.*)\&comment=(.*)/)
-		var name = x[1].replace(/\+/ig," ");
-		var comment = x[2].replace(/\+/ig," ");
-		var data = addComment(name,comment)
-		fs.appendFile("comments.csv",data);
-		var fileData = fs.readFileSync("./guest_book.html");
+		doComment(req.url.slice(req.url.indexOf('?')+1))	
+		res.statusCode = 302;
+		res.setHeader("Location", "guest_book.html");
+		res.end()
 	}
 	else{
 		var file = req.url=="/"&&"./index.html"||"."+req.url
-		var fileData = fs.readFileSync(file)
+		fs.readFile(file,function(err,data){
+			if(err){
+				res.statusCode = 404;
+				res.end("NOT FOUND");
+				return;
+			};
+			res.end(data);
+		})
 	}
-		res.end(fileData);
 };
 
 var server = http.createServer(listenerResponse);
