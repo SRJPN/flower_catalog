@@ -20,7 +20,7 @@
 	<div id="comments"></div>
 	<script>
 	   $.get('comments.csv', function(data) {
-	     var comments = toHTML(data)
+	     var comments = toHTML(data);
 	      $(comments).appendTo("#comments"); } );
 	</script>
 	<hr>
